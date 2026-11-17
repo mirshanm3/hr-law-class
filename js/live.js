@@ -93,6 +93,7 @@ export function mountHostLive(view) {
     else if (p === "question") btns += `<button class="btn" id="rv">Show answer</button>`;
     else if (p === "reveal") btns += `<button class="btn" id="nx">${q + 1 >= Q.length ? "Final results" : "Next question"}</button>`;
     else btns += `<button class="btn" id="ng">New game</button>`;
+    if (p === "question" || p === "reveal" || p === "lobby") btns += `<button class="btn sec" id="rs">↺ Reset game</button>`;
     btns += `<button class="btn sec" id="mm">${musicRunning() ? "⏸ Music off" : "🎵 Music on"}</button>`;
     root.innerHTML = CSS + `<div class="hs"><p class="aeyebrow">Host · HR Law Showdown</p>${body}<p class="asm">${esc(msg)}</p></div><div class="ctl">${btns}</div>`;
     const $ = s => root.querySelector(s);
@@ -101,6 +102,7 @@ export function mountHostLive(view) {
     if ($("#go")) $("#go").onclick = () => { startMusic(); set({ phase: "question", q: 0 }); };
     if ($("#rv")) $("#rv").onclick = () => set({ phase: "reveal", q });
     if ($("#nx")) $("#nx").onclick = () => { if (q + 1 >= Q.length) { stopMusic(); set({ phase: "final", q }); } else set({ phase: "question", q: q + 1 }); };
+    if ($("#rs")) { let armed = false; $("#rs").onclick = () => { if (!armed) { armed = true; $("#rs").textContent = "Click again to confirm reset"; setTimeout(() => { armed = false; const b = root.querySelector("#rs"); if (b) b.textContent = "↺ Reset game"; }, 4000); } else newGame(); }; }
     $("#mm").onclick = () => { musicRunning() ? stopMusic() : startMusic(); draw(); };
     if (p === "question") timer = setInterval(() => { const left = Math.max(0, T - Math.floor((Date.now() - st.at) / 1000)); const cd = $("#cd"), ac = $("#ac"); if (cd) cd.textContent = left; if (ac) ac.textContent = ans().length; if (left <= 0 && signed) { clearInterval(timer); set({ phase: "reveal", q }); } }, 300);
   }
