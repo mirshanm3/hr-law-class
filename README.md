@@ -14,7 +14,7 @@ A static site (slides, quiz, leaderboard, host screen) for GitHub Pages, with Fi
 1. Go to https://console.firebase.google.com and sign in with a Google account.
 2. Click **Create a project**, name it (for example `mnu-hr-quiz`). You can turn Google Analytics off. Click Create.
 3. In the left menu open **Build > Authentication**, click **Get started**, open **Sign-in method**, enable **Anonymous**, and save. Students use this to join without accounts.
-4. (Optional, for the teacher reset button) In the same Sign-in method list, enable **Google**, choose a support email, and save.
+4. In the same Sign-in method list, also enable **Google**, choose a support email, and save. The teacher needs this to run the live game.
 5. Open **Build > Firestore Database**, click **Create database**, choose a location near the Maldives (for example `asia-south1`), and start in **production mode**.
 6. Open the **Rules** tab, delete the existing text, and paste the contents of `firestore.rules`. Replace `YOUR_EMAIL@example.com` with your own Google email (the one you will use for the reset button). Click **Publish**.
 7. Click the gear icon, then **Project settings**. Under **Your apps**, click the **</>** (Web) icon, give it a nickname, and register the app (skip Firebase Hosting).
@@ -36,10 +36,18 @@ A static site (slides, quiz, leaderboard, host screen) for GitHub Pages, with Fi
 2. Play the quiz once on your phone. Your score should appear on the leaderboard.
 3. Open `https://YOUR-USERNAME.github.io/hr-law-class/#/host` on the projector. It shows a QR code and the live leaderboard.
 
+## Running the live game (Kahoot style)
+1. On the projector computer open `https://YOUR-USERNAME.github.io/hr-law-class/#/host`.
+2. Click **Sign in as teacher** and use the Google account whose email is in `firestore.rules`.
+3. Click **Open new game**. A QR code appears. Students scan it, type a nickname and wait.
+4. When the names have appeared, click **Start quiz**. Questions appear on the projector and on every phone.
+5. Click **Show answer** (it also runs automatically when the 20 seconds end). The projector shows the right answer, how many chose each option and the top 5.
+6. Click **Next question**. After the last one click **Final results** for the podium.
+7. Use **New game** to clear scores and run it again for another group.
+Students can also play the solo **Practice quiz** at `#/quiz`. Those scores are not shared.
+
 ## On the day
 - Slides: `#/slides`. Arrow keys, space or tap to advance; tap the left quarter to go back; N shows speaker notes.
-- Show the host screen (`#/host`), students scan the QR code, enter a nickname and play.
-- Reset between groups: on the host screen click **Sign in and reset leaderboard** and sign in with the teacher email.
 
 ## Notes
 - Scores are calculated in the student's browser, so a determined student could cheat. The rules cap scores and nicknames, but this is for classroom fun, not assessment.
