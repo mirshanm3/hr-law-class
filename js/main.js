@@ -19,11 +19,11 @@ async function route() {
   else home();
 }
 function home() {
-  view.innerHTML = `<div class="wrap"><p class="eyebrow">MNU Business School · ACHRM · Week 12</p><h1>Employment Law and Ethics in HRM</h1>
+  view.innerHTML = `<div class="wrap"><p class="aeyebrow">MNU Business School · ACHRM · Week 12</p><h1>Employment Law and Ethics in HRM</h1>
   <p>Guest lecture companion: slides, a live quiz and a class leaderboard.</p>
   <a class="tile" href="#/slides"><h3>Lecture slides</h3><p>Open on any device. Tap or use arrow keys to move through.</p></a>
   <a class="tile" href="#/quiz"><h3>Live quiz: HR Law Showdown</h3><p>12 questions. Faster answers and streaks earn more points.</p></a>
   <a class="tile" href="#/board"><h3>Leaderboard</h3><p>See the top scores for the class.</p></a>
-  <p class="sm">This is teaching material, not legal advice. Check the current consolidated text of the Employment Act before relying on any provision.</p></div>`;
+  <p class="asm">This is teaching material, not legal advice. Check the current consolidated text of the Employment Act before relying on any provision.</p></div>`;
 }
 addEventListener("hashchange", route); route();
