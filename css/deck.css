@@ -1,0 +1,30 @@
+#stage section {
+  padding: 128px 128px 160px;
+  background: #F7F5EF;
+  color: #3C4A52;
+  font-family: 'Public Sans', Arial, sans-serif;
+  font-size: 32px;
+  line-height: 1.4;
+  counter-increment: page;
+}#stage section::after {
+  content: counter(page);
+  position: absolute;
+  right: 128px;
+  bottom: 64px;
+  font-size: 24px;
+  line-height: 1;
+  color: #6B7A82;
+}#stage section.dark { background: #0E2A38; color: #C9D6DA; }#stage section.dark::after { color: #8FA5AE; }#stage section.cover::after { content: ""; }#stage h1,
+#stage h2,
+#stage h3 { font-family: 'EB Garamond', Georgia, serif; color: #0E2A38; margin: 0; }#stage h1 { font-size: 104px; font-weight: 700; line-height: 1.05; }#stage h2 { font-size: 68px; font-weight: 700; line-height: 1.1; }#stage h3 { font-size: 36px; font-weight: 700; line-height: 1.15; }#stage section.dark h1,
+#stage section.dark h2,
+#stage section.dark h3 { color: #F7F5EF; }#stage p { margin: 0; }#stage .eyebrow {
+  font-size: 26px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase;
+  color: #17707A; margin: 0 0 16px;
+}#stage section.dark .eyebrow { color: #E3B55B; }#stage .lead { font-size: 32px; line-height: 1.4; margin: 0; }#stage .sm { font-size: 28px; line-height: 1.4; margin: 0; }#stage .rule { width: 160px; height: 6px; background: #E3B55B; }#stage .stack { display: flex; flex-direction: column; gap: 32px; }#stage .head { display: flex; flex-direction: column; gap: 0; margin: 0 0 40px; }#stage .cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }#stage .cols3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 32px; }#stage .cols4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 28px; }#stage .wide { display: grid; grid-template-columns: 1fr 1.15fr; gap: 48px; }#stage .card {
+  background: #FFFCF5; border: 2px solid #E2DCCB; border-radius: 16px; padding: 28px 32px;
+  display: flex; flex-direction: column; gap: 10px;
+}#stage .card p { font-size: 28px; line-height: 1.4; margin: 0; }#stage .card .tag { font-size: 24px; font-weight: 700; letter-spacing: 2px; color: #17707A; }#stage section.dark .card { background: #163A4C; border: 2px solid #2A5368; }#stage section.dark .card h3 { color: #F7F5EF; }#stage section.dark .card .tag { color: #E3B55B; }#stage .num { font-family: 'EB Garamond', Georgia, serif; font-size: 104px; font-weight: 700; line-height: 1; color: #17707A; margin: 0; }#stage section.dark .num { color: #E3B55B; }#stage .opt {
+  display: flex; flex-direction: row; align-items: center; gap: 28px;
+  background: #FFFCF5; border: 2px solid #E2DCCB; border-radius: 14px; padding: 20px 32px;
+}#stage .opt .k { font-family: 'EB Garamond', Georgia, serif; font-size: 44px; font-weight: 700; color: #17707A; width: 48px; margin: 0; }#stage .opt .t { font-size: 30px; line-height: 1.35; margin: 0; }#stage .opts { display: flex; flex-direction: column; gap: 18px; }#stage .row { display: flex; flex-direction: row; align-items: center; gap: 36px; background: #FFFCF5; border: 2px solid #E2DCCB; border-radius: 16px; padding: 20px 36px; }#stage .row .n { font-family: 'EB Garamond', Georgia, serif; font-size: 68px; font-weight: 700; color: #17707A; width: 64px; margin: 0; line-height: 1; }#stage .rows { display: flex; flex-direction: column; gap: 18px; }#stage .answer { background: #0E2A38; color: #F7F5EF; border-left: 8px solid #E3B55B; border-radius: 12px; padding: 26px 34px; }#stage .answer p { color: #F7F5EF; font-size: 30px; line-height: 1.4; margin: 0; }#stage .kp { background: #E4EFEF; border-left: 8px solid #17707A; border-radius: 12px; padding: 20px 30px; }#stage .kp p { font-size: 28px; line-height: 1.4; margin: 0; }#stage .lbl { font-size: 24px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: #17707A; margin: 0 0 6px; }#stage .answer .lbl { color: #E3B55B; }#stage .scen { background: #FFFCF5; border: 2px solid #E2DCCB; border-radius: 16px; padding: 30px 34px; }#stage .scen p { font-size: 32px; line-height: 1.4; margin: 0; }#stage .ask { font-size: 28px; line-height: 1.4; margin: 0; padding-left: 36px; }#stage .ask li { margin: 0; }#stage .pill { align-self: flex-start; background: #17707A; color: #F7F5EF; padding: 6px 22px; border-radius: 999px; font-size: 24px; font-weight: 700; margin: 0; }#stage .fragment { opacity: 0; transition: opacity 0.35s; }#stage .fragment.visible { opacity: 1; }#stage table { font-size: 28px; color: #3C4A52; width: 100%; }
