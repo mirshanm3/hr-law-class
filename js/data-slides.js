@@ -156,6 +156,12 @@ export const SLIDES=[
   "notes": "Return to the vote you took at the start. Ask who would now change their answer. Link back to Case 1 and Case 6."
  },
  {
+  "id": "join",
+  "cls": "dark",
+  "html": "<div class=\"head\"><p class=\"eyebrow\">Live quiz · HR Law Showdown</p><h2>Scan to join on your phone</h2></div>\n<div class=\"cols2\" style=\"align-items:center\">\n<div style=\"background:#fff;border-radius:24px;padding:36px;width:600px;justify-self:center\"><div id=\"slideqr\"></div></div>\n<div class=\"stack\" style=\"gap:20px\">\n<div class=\"card\"><h3>1. Scan the code</h3><p>Or open the address shown below the code.</p></div>\n<div class=\"card\"><h3>2. Pick a nickname</h3><p>It shows on the class leaderboard.</p></div>\n<div class=\"card\"><h3>3. Play</h3><p>12 questions, 20 seconds each. Speed and streaks earn more points.</p></div>\n<p class=\"sm\" id=\"slideurl\" style=\"word-break:break-all\"></p></div></div>",
+  "notes": "Students scan the code, which opens the quiz page. Show the host screen (#/host) on a second display to watch the live leaderboard. Allow about 10 minutes, then reveal the top three."
+ },
+ {
   "id": "takeaways",
   "cls": "dark",
   "html": "<div class=\"head\">\n<p class=\"eyebrow\">Take-aways</p>\n<h2>Three things to remember</h2>\n</div>\n<div class=\"cols3\">\n<div class=\"card\"><p class=\"num\">1</p><h3>Know the floor</h3><p>The law sets minimum rights. Know them, and apply them from day one, including probation.</p></div>\n<div class=\"card\"><p class=\"num\">2</p><h3>Process protects everyone</h3><p>Documented, fair and timely processes protect employees and the organisation.</p></div>\n<div class=\"card\"><p class=\"num\">3</p><h3>Lawful is not always fair</h3><p>Ask the ethics question too: would I be comfortable if this decision were made public?</p></div>\n</div>\n<p class=\"lead\" style=\"margin-top:44px\">Closing question: where will you be asked to say no first?</p>",
