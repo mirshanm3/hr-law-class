@@ -2,7 +2,7 @@ export const SLIDES=[
  {
   "id": "cover",
   "cls": "dark cover",
-  "html": "<div class=\"stack\" style=\"justify-content:center;height:792px\">\n<p class=\"eyebrow\">Guest lecture · Week 12 · ACHRM</p>\n<h1 style=\"width:1500px\">Employment Law and Ethics in HRM</h1>\n<p class=\"lead\" style=\"width:1300px\">Applying employment law and ethical principles in everyday HR practice in the Maldives</p>\n<div class=\"rule\"></div>\n<p class=\"sm\">MNU Business School · Advanced Certificate in Human Resource Management</p>\n<p class=\"sm\">Ahmed Mirshan<br>BHRM (UK), LLB (UK), MCL (IUM)</p>\n</div>",
+  "html": "<div class=\"stack\" style=\"justify-content:center;height:792px\">\n<p class=\"eyebrow\">Guest lecture · Week 12 · ACHRM</p>\n<h1 style=\"width:1500px\">Employment Law and Ethics in HRM</h1>\n<p class=\"lead\" style=\"width:1300px\">Applying employment law and ethical principles in everyday HR practice in the Maldives</p>\n<div class=\"rule\"></div>\n<p class=\"sm\">MNU Business School · Advanced Certificate in Human Resource Management</p>\n<p class=\"sm\">Ahmed Mirshan, BHRM (UK), LLB (UK), MCL (IUM)<br>Director General, HR, Maldives National University</p>\n</div>",
   "notes": "Welcome and thanks. About 2 hours. Say how it will run: short lecture blocks, quick polls and reveal questions, and group case work in the last part. Invite questions at any point. Add your own name and title in the placeholder."
  },
  {
