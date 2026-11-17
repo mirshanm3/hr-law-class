@@ -1,3 +1,4 @@
+import { startMusic, stopMusic, musicRunning } from "./music.js";
 import { live, watchScores, myId, teacherSignIn, resetScores } from "./fb.js";
 const esc = s => { const d = document.createElement("div"); d.textContent = s; return d.innerHTML; };
 export function rowsHtml(rows, me) {
@@ -14,13 +15,16 @@ export function mountHost(view) {
   <div class="acard" style="text-align:center"><div id="qr" style="background:#fff;padding:16px;border-radius:12px"></div><p class="asm" style="word-break:break-all">${esc(url)}</p></div>
   <div class="acard"><h2>Live leaderboard</h2><div id="lb">${live() ? "Waiting for scores…" : "Leaderboard is off: add your Firebase config."}</div></div></div>
   <div class="acard"><p class="asm">Teacher tools (needs your Google account named in the Firestore rules)</p>
+  <button class="btn sec" id="mm">🎵 Play quiz music</button>
   <button class="btn sec" id="rs">Sign in and reset leaderboard</button><p class="asm" id="msg"></p></div></div>`;
   try { const q = qrcode(0, "M"); q.addData(url); q.make(); const b = document.getElementById("qr"); b.innerHTML = q.createSvgTag(8, 0); const sv = b.querySelector("svg"); sv.style.maxWidth = "100%"; sv.style.height = "auto"; } catch (e) { document.getElementById("qr").textContent = "QR library did not load."; }
+  document.getElementById("mm").onclick = e => { if (musicRunning()) { stopMusic(); e.target.textContent = "🎵 Play quiz music"; } else { startMusic(); e.target.textContent = "⏸ Stop music"; } };
   document.getElementById("rs").onclick = async () => {
     const m = document.getElementById("msg");
     if (!live()) { m.textContent = "Firebase is not connected."; return; }
     try { const em = await teacherSignIn(); m.textContent = "Signed in as " + em + ". Deleting…"; const n = await resetScores(); m.textContent = `Deleted ${n} scores.`; }
     catch (e) { m.textContent = "Could not reset: " + (e.code || e.message) + ". Check the teacher email in the rules."; }
   };
-  return watchScores(15, rows => { document.getElementById("lb").innerHTML = rowsHtml(rows, null); });
+  const un = watchScores(15, rows => { document.getElementById("lb").innerHTML = rowsHtml(rows, null); });
+  return () => { stopMusic(); un(); };
 }

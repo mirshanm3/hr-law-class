@@ -6,7 +6,7 @@ export function mountSlides(view) {
   stage.innerHTML = SLIDES.map((s, i) => `<section class="${s.cls}" data-n="${i + 1}">${s.html}</section>`).join("");
   const secs = [...stage.children];
   try {
-    const url = location.origin + location.pathname + "#/quiz", box = stage.querySelector("#slideqr");
+    const url = location.origin + location.pathname + "#/play", box = stage.querySelector("#slideqr");
     if (box) { const q = qrcode(0, "M"); q.addData(url); q.make(); box.innerHTML = q.createSvgTag(10, 0); const sv = box.querySelector("svg"); sv.style.width = "100%"; sv.style.height = "auto"; stage.querySelector("#slideurl").textContent = url; }
   } catch (e) { const b = stage.querySelector("#slideqr"); if (b) b.textContent = "QR library did not load. Use the address on the host screen."; }
   let i = Math.max(0, Math.min(SLIDES.length - 1, (parseInt(sessionStorageGet("slide")) || 1) - 1)), notesOn = false;

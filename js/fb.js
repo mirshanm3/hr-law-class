@@ -37,3 +37,7 @@ export async function resetScores() {
   await Promise.all(snap.docs.map(d => F.deleteDoc(d.ref)));
   return snap.size;
 }
+export async function putPlayer(rec) { const { F, db, auth } = X; await F.setDoc(F.doc(db, "scores", auth.currentUser.uid), rec); }
+export async function getMe() { const { F, db, auth } = X, s = await F.getDoc(F.doc(db, "scores", auth.currentUser.uid)); return s.exists() ? s.data() : null; }
+export async function setState(o) { const { F, db } = X; await F.setDoc(F.doc(db, "game", "state"), o); }
+export function watchState(cb) { if (!X) return () => {}; const { F, db } = X; return F.onSnapshot(F.doc(db, "game", "state"), s => cb(s.exists() ? s.data() : null), e => console.error(e)); }
